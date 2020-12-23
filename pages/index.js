@@ -52,7 +52,7 @@ export default function Home() {
                 <p className={styles["description"]}>
                     You have until January the 9th to assemble all the clues and
                     figure out where Olivér is hiding Natt, otherwise she'll be
-                    sleeping with the fishes.{" "}
+                    sleeping with the fishes.
                     <span className={styles["pressure"]}>No pressure.</span>
                 </p>
 
