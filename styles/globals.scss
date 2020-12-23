@@ -1,0 +1,172 @@
+/*##################################
+##### HTML and Body
+##################################*/
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+html {
+    color: #333;
+    font-family: "Cutive Mono", sans-serif;
+    overflow-y: scroll; // Avoids content jumping between pages that do/don't have a scrollbar
+}
+
+svg {
+    font-family: "Cutive Mono", sans-serif;
+}
+
+#__next {
+    height: 100%;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.preload-transitions * {
+    // Dry this up a bit with SCSS variable
+    $null-transition: none !important;
+
+    -webkit-transition: $null-transition;
+    -moz-transition: $null-transition;
+    -ms-transition: $null-transition;
+    -o-transition: $null-transition;
+    transition: $null-transition;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul,
+ol {
+    padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    background: inherit;
+    border: none;
+}
+
+:root {
+    --primary-100: #ecf6fd;
+    --primary-200: #c0e0f6;
+    --primary-300: #97c8ed;
+    --primary-400: #54a5de;
+    --primary-500: #3192d8;
+    --primary-600: #277ab4;
+    --primary-700: #21578c;
+    --primary-800: #193d62;
+    //--primary-900: #102841;
+    --primary-900: hsla(211, 60%, 14%, 1);
+
+    --neutral-100: #f6f6f9;
+    //--neutral-200: #f4f5f6;
+    --neutral-200: #ecedef;
+    //--neutral-300: #d5d9dd;
+    --neutral-300: #c6ccd2;
+    --neutral-400: #acb7be;
+    --neutral-500: #8796a1;
+    --neutral-600: #697986;
+    --neutral-700: #525d66;
+    --neutral-800: #35383b;
+    --neutral-900: #2b2b2b;
+
+    --success-100: #eafbf2;
+    --success-200: #cbf1dd;
+    --success-300: #8fe1b5;
+    --success-400: #6fcf9b;
+    --success-500: #42c780;
+    --success-600: #27af67;
+    --success-700: #1f8e53;
+    --success-800: #18713e;
+    --success-900: #145139;
+
+    --danger-100: #fce8e9;
+    --danger-200: #f7c4c9;
+    --danger-300: #ec8d97;
+    --danger-400: #e5616e;
+    --danger-500: #dd3647;
+    --danger-600: #d02533;
+    --danger-700: #b1202a;
+    --danger-800: #8d1b23;
+    --danger-900: #631318;
+
+    --attention-100: #ebfefe;
+    --attention-200: #d3f8f8;
+    --attention-300: #aff3f3;
+    --attention-400: #7beaea;
+    --attention-500: #31d8d8;
+    --attention-600: #1fbdbd;
+    --attention-700: #178d8d;
+    --attention-800: #127272;
+    --attention-900: #0d4f4f;
+
+    --highlight-100: #fcf6ee;
+    --highlight-200: #f7e9d4;
+    --highlight-300: #efd3a9;
+    --highlight-400: #e5b975;
+    --highlight-500: #dc9d42;
+    --highlight-600: #cf8a26;
+    --highlight-700: #ac7320;
+    --highlight-800: #815618;
+    --highlight-900: #5f3f12;
+
+    --accent-100: #fbeff4;
+    --accent-200: #eab8d2;
+    --accent-300: #e199be;
+    --accent-400: #d775a7;
+    --accent-500: #c45490;
+    --accent-600: #ae417b;
+    --accent-700: #973a6c;
+    --accent-800: #792f5a;
+    --accent-900: #50213c;
+}

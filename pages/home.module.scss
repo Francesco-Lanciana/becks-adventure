@@ -1,0 +1,92 @@
+.home-page {
+    padding: 3rem 2rem;
+
+    @media screen and (max-width: 580px) {
+        padding: 3rem 1rem;
+    }
+
+    > main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.title {
+    text-align: center;
+    font-size: 4rem;
+    line-height: 1.1;
+}
+
+.description {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    max-width: 540px;
+    text-align: center;
+    line-height: 1.6;
+    font-weight: 600;
+    color: var(--neutral-800);
+}
+
+.countdown-container {
+    margin-bottom: 4rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    column-gap: 2rem;
+    row-gap: 2rem;
+    padding: 1.125rem 0 1rem 0;
+    justify-items: stretch;
+    width: 100%;
+
+    @media screen and (max-width: 1130px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-width: 780px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 570px) {
+        padding: 40px 0 20px;
+        grid-gap: 15px;
+    }
+
+    @media screen and (max-width: 400px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card-container {
+    // height: 100vh;
+    // max-height: 400px;
+    display: block;
+}
+
+.nat-container {
+    composes: card-container;
+}
+
+.frankie-container {
+    composes: card-container;
+}
+
+.elena-container {
+    composes: card-container;
+}
+
+.avish-container {
+    composes: card-container;
+}
+
+.replay-intro-btn-container {
+    align-self: flex-end;
+    margin-top: 2rem;
+}
+
+.pressure {
+    color: var(--danger-500);
+}

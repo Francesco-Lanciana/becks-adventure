@@ -1,0 +1,22 @@
+.stamp {
+    transform: rotate(12deg);
+    color: #555;
+    font-size: 3rem;
+    font-weight: 700;
+    border: 0.25rem solid #555;
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    text-transform: uppercase;
+    border-radius: 1rem;
+    font-family: "Courier";
+    mask-image: url("/grunge.png");
+
+    color: #0a9928;
+    border: 0.5rem solid #0a9928;
+    mask-position: 13rem 6rem;
+    transform: translate(-50%, -50%) rotate(-14deg);
+    border-radius: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

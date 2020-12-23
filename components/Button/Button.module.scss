@@ -1,0 +1,164 @@
+.button {
+    align-content: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: none;
+    transition: all 0.3s;
+    display: inline-flex;
+    white-space: nowrap; // Prevents buttons from taking full height of parent
+    font-size: 0.875rem;
+    padding: 0.5rem 1.25rem;
+    color: inherit;
+    background: white;
+    position: relative;
+    width: 100%;
+    align-items: center;
+
+    &[data-type="primary"] {
+        --button-color: var(--primary-500);
+        --filled-highlight-color: var(--primary-400);
+        --hollow-highlight-color: var(--primary-600);
+    }
+
+    &[data-type="danger"] {
+        --button-color: var(--danger-500);
+        --filled-highlight-color: var(--danger-400);
+        --hollow-highlight-color: var(--danger-600);
+    }
+
+    &[data-type="default"] {
+        --button-color: var(--neutral-600);
+        --filled-highlight-color: var(--neutral-500);
+        --hollow-highlight-color: var(--neutral-700);
+    }
+
+    &[data-theme="light"][data-type="primary"] {
+        --button-color: var(--primary-500);
+    }
+
+    &[data-theme="dark"][data-type="primary"] {
+        --button-color: var(--highlight-600);
+    }
+
+    &[data-variant="primary"] {
+        background: var(--button-color);
+        color: white;
+        border: 1px solid var(--button-color);
+    }
+
+    &[data-variant="primary"]:not([disabled]):hover {
+        background: var(--filled-highlight-color);
+        border: 1px solid var(--filled-highlight-color);
+    }
+
+    &[data-variant="secondary"] {
+        background: white;
+        color: var(--button-color);
+        border: 1px solid var(--button-color);
+    }
+
+    &[data-theme="dark"][data-variant="secondary"] {
+        background: transparent;
+        color: white;
+        border: 1px solid var(--button-color);
+    }
+
+    &[data-variant="secondary"]:not([disabled]):hover {
+        background: rgba(var(--hollow-highlight-color), 0.3);
+        border: 1px solid var(--hollow-highlight-color);
+    }
+
+    &[data-variant="subtle"] {
+        background: white;
+        color: var(--button-color);
+        border: 1px solid var(--neutral-300);
+    }
+
+    &[data-theme="dark"][data-variant="subtle"] {
+        background: transparent;
+        color: white;
+        border: 1px solid var(--neutral-400);
+    }
+
+    &[data-variant="subtle"]:not([disabled]):hover {
+        background: rgba(var(--neutral-100), 0.5);
+        border: 1px solid var(--neutral-400);
+    }
+
+    &[data-variant="text"] {
+        background: white;
+        color: var(--button-color);
+        border: 1px solid transparent;
+    }
+
+    &[data-theme="dark"][data-variant="text"] {
+        background: transparent;
+        color: white;
+        border: 1px solid transparent;
+    }
+
+    &[data-variant="text"]:not([disabled]):hover {
+        background: var(--neutral-100);
+    }
+
+    &[data-size="large"] {
+        font-size: 1.125rem;
+        height: 3rem;
+        max-width: 12.5rem;
+    }
+
+    &[data-size="medium"] {
+        font-size: 1rem;
+        height: 2.625rem;
+    }
+
+    &[data-size="small"] {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        padding: 0.625rem 1.25rem;
+    }
+
+    &[data-size="inline"] {
+        font-size: 0.875rem;
+        line-height: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+    }
+
+    // The secondary disabled styling works well for primary disabled buttons as well
+    &[data-variant="subtle"][disabled],
+    &[data-variant="secondary"][disabled],
+    &[data-variant="primary"][disabled] {
+        background: white;
+        color: var(--neutral-400);
+        cursor: not-allowed;
+        border: 1px solid var(--neutral-300);
+    }
+
+    &[data-variant="subtle"][disabled] {
+        color: var(--neutral-400);
+        cursor: not-allowed;
+    }
+
+    &:focus {
+        outline: 1px solid var(--filled-highlight-color);
+    }
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    overflow: hidden;
+}
+
+.loader-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+}
