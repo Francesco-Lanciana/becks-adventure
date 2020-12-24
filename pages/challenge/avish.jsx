@@ -63,7 +63,9 @@ const AvishChallenge = () => {
                 />
             </div>
             <main className={styles["challenge-content"]}>
-                <h1 className={styles["challenge-title"]}>The Inebriated</h1>
+                <h1 className={styles["challenge-title-avish"]}>
+                    The Inebriated
+                </h1>
                 <p className={styles["challenge-description"]}>
                     Some say he is still waiting for a mate. You should probably
                     check with the stations law enforcement to make sure he got
