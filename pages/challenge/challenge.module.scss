@@ -2,15 +2,21 @@
     display: flex;
     flex-direction: row;
     flex: 1 1 auto;
+    height: 100%;
 
     @media screen and (max-width: 740px) {
         flex-direction: column;
+        height: auto;
+
+        .image-container {
+            height: 85vh;
+        }
     }
 }
 
 .image-container {
     width: 50vw;
-    height: 85vh;
+    height: 100%;
     min-width: 310px;
     width: fit-content;
 
