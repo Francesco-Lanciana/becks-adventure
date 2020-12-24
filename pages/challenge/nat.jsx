@@ -7,6 +7,8 @@ import Button from "../../components/Button/Button";
 import Stamp from "../../components/Stamp/Stamp";
 import PasscodeInput from "../../components/PasscodeInput/PasscodeInput";
 
+import { postData } from "../../lib/fetch";
+
 import styles from "./challenge.module.scss";
 
 const PASSCODE_LENGTH = 4;
@@ -26,9 +28,10 @@ const NatChallenge = () => {
         setPasscodeAttempt(passcodeAttempt);
     };
 
-    const handlePasswordSubmit = () => {
+    const handlePasswordSubmit = async () => {
         if (passcodeAttempt === PASSCODE) {
             setAttemptSuccessful(true);
+            await postData("/api/complete-challenge", { challenge: "nat" });
         } else {
             setAttemptMade(true);
         }

@@ -7,10 +7,12 @@ import Button from "../../components/Button/Button";
 import Stamp from "../../components/Stamp/Stamp";
 import PasscodeInput from "../../components/PasscodeInput/PasscodeInput";
 
+import { postData } from "../../lib/fetch";
+
 import styles from "./challenge.module.scss";
 
 const PASSCODE_LENGTH = 4;
-const PASSCODE = "0388";
+const PASSCODE = "8243";
 
 const ElenaChallenge = () => {
     const [passcodeAttempt, setPasscodeAttempt] = useState("");
@@ -26,9 +28,10 @@ const ElenaChallenge = () => {
         setPasscodeAttempt(passcodeAttempt);
     };
 
-    const handlePasswordSubmit = () => {
+    const handlePasswordSubmit = async () => {
         if (passcodeAttempt === PASSCODE) {
             setAttemptSuccessful(true);
+            await postData("/api/complete-challenge", { challenge: "elena" });
         } else {
             setAttemptMade(true);
         }

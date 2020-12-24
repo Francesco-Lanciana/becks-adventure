@@ -33,6 +33,11 @@
     line-height: 1.6;
     font-weight: 600;
     color: var(--neutral-800);
+    padding: 1rem 2rem;
+
+    &[data-completed="true"] {
+        border: 1px solid var(--highlight-500);
+    }
 }
 
 .countdown-container {
@@ -103,6 +108,7 @@
     background: var(--primary-900);
     color: white;
     margin-bottom: 4rem;
+    margin-top: 3rem;
 }
 
 .showdown {
@@ -136,7 +142,7 @@
 }
 
 .passcode-submit-btn-container {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .map-container {
@@ -153,6 +159,7 @@
     padding: 2rem 1rem;
     display: grid;
     position: relative;
+    margin-top: 2rem;
 
     &:before {
         content: "";

@@ -7,6 +7,8 @@ import Button from "../../components/Button/Button";
 import Stamp from "../../components/Stamp/Stamp";
 import PasscodeInput from "../../components/PasscodeInput/PasscodeInput";
 
+import { postData } from "../../lib/fetch";
+
 import styles from "./challenge.module.scss";
 
 const PASSCODE_LENGTH = 4;
@@ -26,9 +28,10 @@ const FrankieChallenge = () => {
         setPasscodeAttempt(passcodeAttempt);
     };
 
-    const handlePasswordSubmit = () => {
+    const handlePasswordSubmit = async () => {
         if (passcodeAttempt === PASSCODE) {
             setAttemptSuccessful(true);
+            await postData("/api/complete-challenge", { challenge: "frankie" });
         } else {
             setAttemptMade(true);
         }
@@ -60,7 +63,7 @@ const FrankieChallenge = () => {
                 />
             </div>
             <main className={styles["challenge-content"]}>
-                <h1 className={styles["challenge-title"]}>The Lover</h1>
+                <h1 className={styles["challenge-title"]}>The Romantic</h1>
                 <p className={styles["challenge-description"]}>
                     Saying "I love you" for the first time can be very
                     exhausting. Sometimes you just need to take a break on a

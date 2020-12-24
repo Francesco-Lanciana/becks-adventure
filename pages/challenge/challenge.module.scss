@@ -96,7 +96,10 @@
 .submit-passcode-btn-container {
     flex: 0 0 auto;
     padding: 0 0.75rem;
-    margin-bottom: 2rem;
+
+    @media screen and (max-width: 740px) {
+        margin-bottom: 2rem;
+    }
 }
 
 .stamp-container {

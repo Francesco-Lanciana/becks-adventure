@@ -17,6 +17,8 @@ import Button from "../components/Button/Button";
 import Map from "../components/Map/Map";
 import PasscodeInput from "../components/PasscodeInput/PasscodeInput";
 
+import { postData } from "../lib/fetch";
+
 import styles from "./home.module.scss";
 
 const location = {
@@ -31,10 +33,11 @@ export default function Home() {
     const [showIntro, setShowIntro] = useState(false);
     const [passcodeAttempt, setPasscodeAttempt] = useState("");
     const [attemptMade, setAttemptMade] = useState(false);
-    const [attemptSuccessful, setAttemptSuccessful] = useState(false);
+    const [finalBossDefeated, setFinalBossDefeated] = useState(false);
+    const [completedChallenges, setCompletedChallenges] = useState([]);
     const { width, height } = useWindowSize();
 
-    const countdownDate = new Date("January 09, 2021 03:00:00");
+    const countdownDate = new Date("January 09, 2020 15:00:00");
     const minutesToDate = differenceInMinutes(
         new Date(countdownDate),
         new Date()
@@ -46,37 +49,39 @@ export default function Home() {
         passcodeAttempt !== PASSCODE &&
         attemptMade;
 
-    // Our custom hook to get context values
-    const { loadingUser, user } = useUser();
-
-    const profile = { username: "nextjs_user", message: "Awesome!!" };
-
     useEffect(() => {
-        if (!loadingUser) {
-            // You know that the user is loaded: either logged in or out!
-            console.log(user);
-        }
-        // You also have your firebase app initialized
-        console.log(firebase);
-    }, [loadingUser, user]);
+        fetch("/api/get-stats")
+            .then((response) => response.json())
+            .then((data) => {
+                const completedIntro = data.intro;
+                const completedChallenges = data.completed || [];
 
-    const createUser = async () => {
-        const db = firebase.firestore();
-        await db.collection("profile").doc(profile.username).set(profile);
-        alert("User created!!");
-    };
+                if (!completedIntro) setShowIntro(true);
+                if (completedChallenges.includes("final"))
+                    setFinalBossDefeated(true);
+                setCompletedChallenges(completedChallenges);
+            });
+    }, []);
 
-    const handlePasswordSubmit = () => {
+    const handlePasswordSubmit = async () => {
         if (passcodeAttempt === PASSCODE) {
-            setAttemptSuccessful(true);
+            setFinalBossDefeated(true);
+            await postData("/api/complete-challenge", { challenge: "final" });
         } else {
             setAttemptMade(true);
         }
     };
 
-    function handleStartAdventure() {
+    async function handleStartAdventure() {
+        await postData("/api/complete-intro");
         setShowIntro(false);
     }
+
+    const allStarterChallengesCompleted =
+        completedChallenges.includes("elena") &&
+        completedChallenges.includes("nat") &&
+        completedChallenges.includes("frankie") &&
+        completedChallenges.includes("avish");
 
     return (
         <div className={styles["home-page"]}>
@@ -131,7 +136,7 @@ export default function Home() {
             </Dialog>
 
             <main>
-                {attemptSuccessful && (
+                {finalBossDefeated && (
                     <Confetti
                         width={width}
                         height={height}
@@ -140,12 +145,26 @@ export default function Home() {
                     />
                 )}
                 <h1 className={styles["title"]}>A trip down memory lane</h1>
-                <p className={styles["description"]}>
-                    You have until January the 9th to assemble all the clues and
-                    figure out where Olivé is hiding Natt, otherwise she'll be
-                    sleeping with the fishes.{" "}
-                    <span className={styles["pressure"]}>No pressure.</span>
-                </p>
+
+                {!allStarterChallengesCompleted && (
+                    <p className={styles["description"]}>
+                        You have until January the 9th to assemble all the clues
+                        and figure out where Olivé is hiding Natt, otherwise
+                        she'll be sleeping with the fishes.{" "}
+                        <span className={styles["pressure"]}>No pressure.</span>
+                    </p>
+                )}
+                {allStarterChallengesCompleted && !finalBossDefeated && (
+                    <p
+                        className={styles["description"]}
+                        data-completed={allStarterChallengesCompleted}
+                    >
+                        Finished early huh? Impressive. Well too bad for you
+                        Olivé is out of the office at this time (villians need
+                        some time off). Come back when the countdown hits zero
+                        for the final showdown!
+                    </p>
+                )}
                 {!countdownFinished && (
                     <div className={styles["countdown-container"]}>
                         <Countdown countdownDate={countdownDate} />
@@ -154,7 +173,7 @@ export default function Home() {
 
                 {countdownFinished && (
                     <div className={styles["final-boss-container"]}>
-                        {!attemptSuccessful && (
+                        {!finalBossDefeated && (
                             <motion.div className={styles["showdown"]}>
                                 <h2 className={styles["final-boss-title"]}>
                                     The Showdown
@@ -194,7 +213,7 @@ export default function Home() {
                             </motion.div>
                         )}
 
-                        {attemptSuccessful && (
+                        {finalBossDefeated && (
                             <motion.div className={styles["completed"]}>
                                 <h2 className={styles["final-boss-title"]}>
                                     Congratulations
@@ -221,18 +240,18 @@ export default function Home() {
                             displayImageUrl="/elena-display.jpg"
                             hoverImageUrl="/elena-hover.jpg"
                             unlocked={true}
-                            completed={false}
+                            completed={completedChallenges.includes("elena")}
                         />
                     </div>
 
                     <div className={styles["frankie-container"]}>
                         <Card
                             id="frankie"
-                            title="The Lover"
+                            title="The Romantic"
                             displayImageUrl="/frankie-display.jpg"
                             hoverImageUrl="/frankie-hover.jpg"
-                            unlocked={false}
-                            completed={false}
+                            unlocked={completedChallenges.includes("elena")}
+                            completed={completedChallenges.includes("frankie")}
                         />
                     </div>
 
@@ -242,8 +261,8 @@ export default function Home() {
                             title="The Explorer"
                             displayImageUrl="/nat-display.jpg"
                             hoverImageUrl="/nat-hover.jpg"
-                            unlocked={false}
-                            completed={false}
+                            unlocked={completedChallenges.includes("frankie")}
+                            completed={completedChallenges.includes("nat")}
                         />
                     </div>
 
@@ -253,8 +272,8 @@ export default function Home() {
                             title="The Inebriated"
                             displayImageUrl="/avish-display.jpg"
                             hoverImageUrl="/avish-hover.jpg"
-                            unlocked={false}
-                            completed={false}
+                            unlocked={completedChallenges.includes("nat")}
+                            completed={completedChallenges.includes("avish")}
                         />
                     </div>
                 </div>

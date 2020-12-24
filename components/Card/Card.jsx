@@ -26,6 +26,7 @@ const Card = ({
             className={styles.card}
             data-disabled={!unlocked}
             onClick={handleClick}
+            data-completed={completed}
         >
             <div className={styles["image-container"]}>
                 <div className={styles["display-image"]}>
@@ -61,7 +62,6 @@ const Card = ({
                             focusable="false"
                             data-prefix="far"
                             data-icon="lock"
-                            class="svg-inline--fa fa-lock fa-w-14"
                             role="img"
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 448 512"
