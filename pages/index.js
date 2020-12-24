@@ -37,7 +37,7 @@ export default function Home() {
     const [completedChallenges, setCompletedChallenges] = useState([]);
     const { width, height } = useWindowSize();
 
-    const countdownDate = new Date("January 09, 2020 15:00:00");
+    const countdownDate = new Date("January 09, 2021 15:00:00");
     const minutesToDate = differenceInMinutes(
         new Date(countdownDate),
         new Date()
