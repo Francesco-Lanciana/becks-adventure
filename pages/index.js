@@ -91,25 +91,14 @@ export default function Home() {
 
             <Dialog show={showIntro} onClose={() => setShowIntro(false)}>
                 <div className={styles["intro-popover"]}>
-                    <div className={styles["pictures"]}>
-                        <div className={styles["oliver"]}>
-                            <Image
-                                src="/ollie-menacing.jpg"
-                                alt="Villian"
-                                width={100}
-                                height={100}
-                                objectFit="cover"
-                            />
-                        </div>
-                        <div className={styles["nat"]}>
-                            <Image
-                                src="/nat-despair.jpg"
-                                alt="Villian"
-                                width={100}
-                                height={100}
-                                objectFit="cover"
-                            />
-                        </div>
+                    <div className={styles["picture"]}>
+                        <Image
+                            src="/ollie-villian.jpg"
+                            alt="Villian"
+                            width={800}
+                            height={300}
+                            objectFit="cover"
+                        />
                     </div>
 
                     <p className={styles["explainer"]}>
@@ -117,8 +106,10 @@ export default function Home() {
                         her in an undisclosed location. Like all great villians
                         he has left behind a trail of codes that when combined
                         will reveal his location. You have until January the 9th
-                        to collect all the codes! And remember, no adventuring
-                        without your adventure hat.
+                        to collect all the codes!
+                        <br />
+                        <br />
+                        And remember, no adventuring without your adventure hat.
                     </p>
 
                     <div className={styles["goto-equipment-btn-container"]}>

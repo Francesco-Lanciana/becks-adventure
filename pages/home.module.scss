@@ -154,58 +154,8 @@
     background: var(--highlight-100);
 }
 
-.pictures {
-    margin-bottom: 1rem;
-    padding: 2rem 1rem;
-    display: grid;
-    position: relative;
-    margin-top: 2rem;
-
-    &:before {
-        content: "";
-        width: 300px;
-        height: 300px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        background: var(--highlight-400);
-        position: absolute;
-    }
-}
-
 .picture {
-    > :first-child {
-        height: 150px;
-        width: 150px;
-        border-radius: 4px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
-}
-
-.oliver {
-    composes: picture;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 26%;
-    z-index: 2;
-
-    @media screen and (max-width: 460px) {
-        padding-left: 12%;
-    }
-}
-
-.nat {
-    composes: picture;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 26%;
-    z-index: 1;
-    margin-top: -30px;
-
-    @media screen and (max-width: 460px) {
-        padding-right: 12%;
-    }
+    margin-bottom: 1rem;
 }
 
 .explainer {
