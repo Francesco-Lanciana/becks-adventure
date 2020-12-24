@@ -161,8 +161,8 @@ export default function Home() {
                     >
                         Finished early huh? Impressive. Well too bad for you
                         Olivé is out of the office at this time (villians need
-                        some time off). Come back when the countdown hits zero
-                        for the final showdown!
+                        some time off too). Come back when the countdown hits
+                        zero for the final showdown!
                     </p>
                 )}
                 {!countdownFinished && (
