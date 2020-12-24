@@ -52,7 +52,7 @@ const FrankieChallenge = () => {
         <div className={styles["challenge-page"]}>
             <div className={styles["image-container"]}>
                 <Image
-                    src={"/elena-beck.jpg"}
+                    src={"/frankie-beck.jpg"}
                     alt="Picture of the memory"
                     width={500}
                     height={1000}
@@ -62,11 +62,9 @@ const FrankieChallenge = () => {
             <main className={styles["challenge-content"]}>
                 <h1 className={styles["challenge-title"]}>The Lover</h1>
                 <p className={styles["challenge-description"]}>
-                    He has a loud voice without even trying, and he uses that
-                    voice for talking and rhyming. He's been known to say some
-                    incredibly profound things, alsome more . Of all the
-                    profound things he has ever said, one sticks out above all
-                    the rest. On a night a year after they had __ met, he yelled
+                    Saying "I love you" for the first time can be very
+                    exhausting. Sometimes you just need to take a break on a
+                    nice blue bench.
                 </p>
 
                 <div

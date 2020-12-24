@@ -52,7 +52,7 @@ const NatChallenge = () => {
         <div className={styles["challenge-page"]}>
             <div className={styles["image-container"]}>
                 <Image
-                    src={"/elena-beck.jpg"}
+                    src={"/nat-beck.jpg"}
                     alt="Picture of the memory"
                     width={500}
                     height={1000}
@@ -60,13 +60,9 @@ const NatChallenge = () => {
                 />
             </div>
             <main className={styles["challenge-content"]}>
-                <h1 className={styles["challenge-title"]}>The Lover</h1>
+                <h1 className={styles["challenge-title"]}>The Explorer</h1>
                 <p className={styles["challenge-description"]}>
-                    He has a loud voice without even trying, and he uses that
-                    voice for talking and rhyming. He's been known to say some
-                    incredibly profound things, alsome more . Of all the
-                    profound things he has ever said, one sticks out above all
-                    the rest. On a night a year after they had __ met, he yelled
+                    For a small human she sure likes to sit in some huge seats
                 </p>
 
                 <div

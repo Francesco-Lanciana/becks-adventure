@@ -8,8 +8,9 @@
     flex-direction: column;
     transition: background 0.9s;
     height: 80vh;
-    margin: 10vh 5vw;
+    margin: 10vh auto;
     width: 90vw;
+    max-width: 700px;
 
     > :not(:first-child) {
         overflow: auto;

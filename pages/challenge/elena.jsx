@@ -60,13 +60,11 @@ const ElenaChallenge = () => {
                 />
             </div>
             <main className={styles["challenge-content"]}>
-                <h1 className={styles["challenge-title"]}>The Lover</h1>
+                <h1 className={styles["challenge-title"]}>The Oddball</h1>
                 <p className={styles["challenge-description"]}>
-                    He has a loud voice without even trying, and he uses that
-                    voice for talking and rhyming. He's been known to say some
-                    incredibly profound things, alsome more . Of all the
-                    profound things he has ever said, one sticks out above all
-                    the rest. On a night a year after they had __ met, he yelled
+                    Everyone has their hobbies. For some it's playing games, for
+                    others it's hiding those games (who doesn't love elaborate
+                    goose chases). Haven't been back there in a while...
                 </p>
 
                 <div

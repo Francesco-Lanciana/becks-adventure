@@ -1,15 +1,21 @@
 .home-page {
-    padding: 3rem 2rem;
-
-    @media screen and (max-width: 580px) {
-        padding: 3rem 1rem;
-    }
+    padding: 3rem 0;
 
     > main {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
+
+        > * {
+            padding-left: 2rem;
+            padding-right: 2rem;
+
+            @media screen and (max-width: 580px) {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
     }
 }
 
@@ -55,7 +61,7 @@
         grid-gap: 15px;
     }
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 460px) {
         grid-template-columns: 1fr;
     }
 }
@@ -89,4 +95,126 @@
 
 .pressure {
     color: var(--danger-500);
+}
+
+.final-boss-container {
+    width: 100%;
+    padding: 2rem 0 !important;
+    background: var(--primary-900);
+    color: white;
+    margin-bottom: 4rem;
+}
+
+.showdown {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.completed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.final-boss-title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 0.25rem;
+}
+
+.final-boss-description {
+    font-size: 1.25rem;
+    max-width: 1000px;
+    line-height: 1.3;
+}
+
+.passcode-container {
+    margin-top: 3rem;
+}
+
+.passcode-submit-btn-container {
+    margin-top: 1rem;
+}
+
+.map-container {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.intro-popover {
+    background: var(--highlight-100);
+}
+
+.pictures {
+    margin-bottom: 1rem;
+    padding: 2rem 1rem;
+    display: grid;
+    position: relative;
+
+    &:before {
+        content: "";
+        width: 300px;
+        height: 300px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: var(--highlight-400);
+        position: absolute;
+    }
+}
+
+.picture {
+    > :first-child {
+        height: 150px;
+        width: 150px;
+        border-radius: 4px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.oliver {
+    composes: picture;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 26%;
+    z-index: 2;
+
+    @media screen and (max-width: 460px) {
+        padding-left: 12%;
+    }
+}
+
+.nat {
+    composes: picture;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 26%;
+    z-index: 1;
+    margin-top: -30px;
+
+    @media screen and (max-width: 460px) {
+        padding-right: 12%;
+    }
+}
+
+.explainer {
+    padding: 0 2rem 2rem;
+    max-width: 580px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.25rem;
+}
+
+.goto-equipment-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+}
+
+.goto-equipment-btn {
 }

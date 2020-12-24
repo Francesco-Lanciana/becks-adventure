@@ -62,11 +62,9 @@ const AvishChallenge = () => {
             <main className={styles["challenge-content"]}>
                 <h1 className={styles["challenge-title"]}>The Lover</h1>
                 <p className={styles["challenge-description"]}>
-                    He has a loud voice without even trying, and he uses that
-                    voice for talking and rhyming. He's been known to say some
-                    incredibly profound things, alsome more . Of all the
-                    profound things he has ever said, one sticks out above all
-                    the rest. On a night a year after they had __ met, he yelled
+                    Some say he is still waiting for a mate. You should probably
+                    check with the stations law enforcement to make sure he got
+                    home ok.
                 </p>
 
                 <div
