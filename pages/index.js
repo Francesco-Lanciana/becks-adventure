@@ -231,7 +231,7 @@ export default function Home() {
                             title="The Lover"
                             displayImageUrl="/frankie-display.jpg"
                             hoverImageUrl="/frankie-hover.jpg"
-                            unlocked={true}
+                            unlocked={false}
                             completed={false}
                         />
                     </div>
@@ -242,7 +242,7 @@ export default function Home() {
                             title="The Explorer"
                             displayImageUrl="/nat-display.jpg"
                             hoverImageUrl="/nat-hover.jpg"
-                            unlocked={true}
+                            unlocked={false}
                             completed={false}
                         />
                     </div>
