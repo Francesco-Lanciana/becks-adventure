@@ -38,10 +38,7 @@ export default function Home() {
     const { width, height } = useWindowSize();
 
     const countdownDate = new Date("January 09, 2021 17:00:00");
-    const minutesToDate = differenceInMinutes(
-        new Date(countdownDate),
-        new Date()
-    );
+    const minutesToDate = differenceInMinutes(countdownDate, new Date());
     const countdownFinished = minutesToDate <= 0;
 
     const hasErrored =
@@ -162,7 +159,7 @@ export default function Home() {
                     </div>
                 )}
 
-                {countdownFinished && (
+                {countdownFinished && allStarterChallengesCompleted && (
                     <div className={styles["final-boss-container"]}>
                         {!finalBossDefeated && (
                             <motion.div className={styles["showdown"]}>
