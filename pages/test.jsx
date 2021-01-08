@@ -1,7 +1,7 @@
 import Map from "../components/Map/Map";
 
 const location = {
-    address: "Olivé's Abode",
+    address: "Olivé's Lair",
     lat: -37.819548,
     lng: 144.945871,
 };

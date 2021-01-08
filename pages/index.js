@@ -22,7 +22,7 @@ import { postData } from "../lib/fetch";
 import styles from "./home.module.scss";
 
 const location = {
-    address: "Olivé's Abode",
+    address: "Olivé's Lair",
     lat: -37.819548,
     lng: 144.945871,
 };
