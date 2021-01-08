@@ -67,9 +67,9 @@ const AvishChallenge = () => {
                     The Inebriated
                 </h1>
                 <p className={styles["challenge-description"]}>
-                    Some say he is still waiting for a mate. You should probably
-                    check with the stations law enforcement to make sure he got
-                    home ok.
+                    Look for a very small tree shaped like a Y in a place named
+                    after a Square that sits across from a spot that some say is
+                    ideal for waiting for a mate.
                 </p>
 
                 <div
