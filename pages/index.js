@@ -37,7 +37,7 @@ export default function Home() {
     const [completedChallenges, setCompletedChallenges] = useState([]);
     const { width, height } = useWindowSize();
 
-    const countdownDate = new Date("January 09, 2021 15:00:00");
+    const countdownDate = new Date("January 09, 2021 16:45:00");
     const minutesToDate = differenceInMinutes(
         new Date(countdownDate),
         new Date()
@@ -173,8 +173,9 @@ export default function Home() {
                                     Congratulations on making it this far. You
                                     have proven you have what it takes to go
                                     head to head with the wicked Olivé. He
-                                    fancies himself as a boxer. Make sure you
-                                    come fully equiped!
+                                    fancies himself as a boxer but I think you
+                                    can take him. He will be waiting for you in
+                                    the ring!
                                 </p>
 
                                 <div className={styles["passcode-container"]}>
