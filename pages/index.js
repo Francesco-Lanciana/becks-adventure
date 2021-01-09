@@ -172,7 +172,9 @@ export default function Home() {
                                     head to head with the wicked Olivé. He
                                     fancies himself as a boxer but I think you
                                     can take him. He will be waiting for you in
-                                    the ring!
+                                    the ring! Remember not to beat him up too
+                                    badly, but I guess that's what first-aid
+                                    kits are for.
                                 </p>
 
                                 <div className={styles["passcode-container"]}>
