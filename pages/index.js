@@ -142,7 +142,7 @@ export default function Home() {
                         <span className={styles["pressure"]}>No pressure.</span>
                     </p>
                 )}
-                {allStarterChallengesCompleted && !finalBossDefeated && (
+                {allStarterChallengesCompleted && !countdownFinished && (
                     <p
                         className={styles["description"]}
                         data-completed={allStarterChallengesCompleted}
