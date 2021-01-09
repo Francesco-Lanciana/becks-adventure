@@ -27,7 +27,7 @@ const location = {
     lng: 144.945871,
 };
 
-const PASSCODE = "7272";
+const PASSCODE = "1814";
 
 export default function Home() {
     const [showIntro, setShowIntro] = useState(false);
